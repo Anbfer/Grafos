@@ -117,11 +117,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastrar Felidaes"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarBtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="cadastrarRlcBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastrar Rela&#xe7;&#xf5;es"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarRlcBtnActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

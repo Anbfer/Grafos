@@ -2,6 +2,7 @@ package Principal;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class Felinos {
     private Grafo grafo;
@@ -47,6 +48,15 @@ public class Felinos {
     public void imprimeRelacionados(String felino) {
         // Método que imprime os felinos relacionados a um felino específico
         List<String> listaDeRelacionados = grafo.buscaRelacionados(felino);
-        System.out.println("Relacionados ao felino " + felino.toUpperCase() + ": " + listaDeRelacionados);
+        StringBuilder stringBuilder = new StringBuilder();
+                
+        for(String felidae : listaDeRelacionados){
+            stringBuilder.append(felidae).append("\n");
+        }
+        
+        String resultadoBusca = stringBuilder.toString();
+        
+        JOptionPane.showMessageDialog(null, "Descendentes/Relacionados: \n" + resultadoBusca, "Grafo " + felino.toUpperCase(), JOptionPane.INFORMATION_MESSAGE);
+
     }
 }

@@ -56,8 +56,18 @@ public class Menu extends javax.swing.JFrame {
         });
 
         cadastrarBtn.setText("Cadastrar Felidaes");
+        cadastrarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarBtnActionPerformed(evt);
+            }
+        });
 
         cadastrarRlcBtn.setText("Cadastrar Relações");
+        cadastrarRlcBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarRlcBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -122,6 +132,16 @@ public class Menu extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         funcoesBtns.sair();
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void cadastrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtnActionPerformed
+        new CadastrarFelidaes().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_cadastrarBtnActionPerformed
+
+    private void cadastrarRlcBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarRlcBtnActionPerformed
+        new CadastrarRelacoes().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_cadastrarRlcBtnActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,13 +4,14 @@
  */
 package Telas;
 
+import Principal.Felinos;
 import Principal.FuncBtns;
 /**
  *
  * @author angeloabf
  */
 public class PesquisarParentes extends javax.swing.JFrame {
-    
+    Felinos felinos = new Felinos();
     /**
      * Creates new form PesquisarParentes
      */
@@ -47,6 +48,11 @@ public class PesquisarParentes extends javax.swing.JFrame {
         jLabel1.setPreferredSize(new java.awt.Dimension(182, 32));
 
         pantheraBtn.setText("Panthera");
+        pantheraBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pantheraBtnActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Gato-Vermelho");
 
@@ -136,10 +142,10 @@ public class PesquisarParentes extends javax.swing.JFrame {
                     .addComponent(jButton6))
                 .addGap(49, 49, 49)
                 .addComponent(voltarBtn)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(396, 315));
+        setSize(new java.awt.Dimension(396, 378));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -155,6 +161,11 @@ public class PesquisarParentes extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void pantheraBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pantheraBtnActionPerformed
+        felinos.pantheraAncestral();
+        felinos.imprimeRelacionados("PANTHERA ANCESTRAL");
+    }//GEN-LAST:event_pantheraBtnActionPerformed
 
     /**
      * @param args the command line arguments
