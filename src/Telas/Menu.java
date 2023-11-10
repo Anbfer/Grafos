@@ -4,6 +4,7 @@
  */
 package Telas;
 
+import Principal.Felinos;
 import Principal.FuncBtns;
 
 /**
@@ -11,14 +12,17 @@ import Principal.FuncBtns;
  * @author angeloabf
  */
 public class Menu extends javax.swing.JFrame {
+
     FuncBtns funcoesBtns = new FuncBtns();
+    Felinos felidae = new Felinos();
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
+        felidae.inicializarFelidaes(); //Inicializa os felidae para exemplo.
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,8 +36,10 @@ public class Menu extends javax.swing.JFrame {
         tituloGFelidae = new javax.swing.JLabel();
         felidaesBtn = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
-        cadastrarBtn = new javax.swing.JButton();
-        cadastrarRlcBtn = new javax.swing.JButton();
+        cadastrarFelinoBtn = new javax.swing.JButton();
+        cadastrarRlcFelinoBtn = new javax.swing.JButton();
+        pesquisarBtn = new javax.swing.JButton();
+        exibeTodosBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal - Felidae");
@@ -42,6 +48,7 @@ public class Menu extends javax.swing.JFrame {
         tituloGFelidae.setText("Grafos-Felidae");
 
         felidaesBtn.setText("Felidaes Exemplo");
+        felidaesBtn.setPreferredSize(new java.awt.Dimension(129, 23));
         felidaesBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 felidaesBtnActionPerformed(evt);
@@ -55,17 +62,37 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        cadastrarBtn.setText("Cadastrar Felidaes");
-        cadastrarBtn.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarFelinoBtn.setText("Cadastrar Felidaes");
+        cadastrarFelinoBtn.setMaximumSize(new java.awt.Dimension(129, 23));
+        cadastrarFelinoBtn.setMinimumSize(new java.awt.Dimension(129, 23));
+        cadastrarFelinoBtn.setPreferredSize(new java.awt.Dimension(129, 23));
+        cadastrarFelinoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarBtnActionPerformed(evt);
+                cadastrarFelinoBtnActionPerformed(evt);
             }
         });
 
-        cadastrarRlcBtn.setText("Cadastrar Relações");
-        cadastrarRlcBtn.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarRlcFelinoBtn.setText("Cadastrar Relações");
+        cadastrarRlcFelinoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarRlcBtnActionPerformed(evt);
+                cadastrarRlcFelinoBtnActionPerformed(evt);
+            }
+        });
+
+        pesquisarBtn.setText("Pesquisar");
+        pesquisarBtn.setMaximumSize(new java.awt.Dimension(129, 23));
+        pesquisarBtn.setMinimumSize(new java.awt.Dimension(129, 23));
+        pesquisarBtn.setPreferredSize(new java.awt.Dimension(129, 23));
+        pesquisarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesquisarBtnActionPerformed(evt);
+            }
+        });
+
+        exibeTodosBtn.setText("Exibe Todos");
+        exibeTodosBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibeTodosBtnActionPerformed(evt);
             }
         });
 
@@ -76,31 +103,37 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cadastrarRlcBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cadastrarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(felidaesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(63, 63, 63)
-                        .addComponent(tituloGFelidae)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                        .addComponent(tituloGFelidae))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cadastrarRlcFelinoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cadastrarFelinoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(felidaesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pesquisarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(exibeTodosBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(tituloGFelidae)
-                .addGap(28, 28, 28)
-                .addComponent(felidaesBtn)
-                .addGap(18, 18, 18)
-                .addComponent(cadastrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(cadastrarRlcBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGap(22, 22, 22)
+                .addComponent(felidaesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cadastrarFelinoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cadastrarRlcFelinoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pesquisarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(exibeTodosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85)
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -130,18 +163,28 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_felidaesBtnActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        //encerra o programa
         funcoesBtns.sair();
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void cadastrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBtnActionPerformed
-        new CadastrarFelidaes().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_cadastrarBtnActionPerformed
+    private void cadastrarFelinoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarFelinoBtnActionPerformed
+        //Permite adicionar novo felino ou familia de felino
+        felidae.adicionarEspecieFelino();
+    }//GEN-LAST:event_cadastrarFelinoBtnActionPerformed
 
-    private void cadastrarRlcBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarRlcBtnActionPerformed
-        new CadastrarRelacoes().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_cadastrarRlcBtnActionPerformed
+    private void cadastrarRlcFelinoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarRlcFelinoBtnActionPerformed
+        //Permite adicionar novo relacionamento entre felinos
+        felidae.adicionarRelacaoFelinos();
+    }//GEN-LAST:event_cadastrarRlcFelinoBtnActionPerformed
+
+    private void pesquisarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarBtnActionPerformed
+        //Inicializa os exemplos de Felinos
+        felidae.buscarFelidaesEspecificos();
+    }//GEN-LAST:event_pesquisarBtnActionPerformed
+
+    private void exibeTodosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibeTodosBtnActionPerformed
+        felidae.exibeTodosFelidaes();
+    }//GEN-LAST:event_exibeTodosBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,10 +223,12 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSair;
-    private javax.swing.JButton cadastrarBtn;
-    private javax.swing.JButton cadastrarRlcBtn;
+    private javax.swing.JButton cadastrarFelinoBtn;
+    private javax.swing.JButton cadastrarRlcFelinoBtn;
+    private javax.swing.JButton exibeTodosBtn;
     private javax.swing.JButton felidaesBtn;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton pesquisarBtn;
     private javax.swing.JLabel tituloGFelidae;
     // End of variables declaration//GEN-END:variables
 }

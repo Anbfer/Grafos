@@ -10,13 +10,7 @@ public class Principal {
     public static void main(String[] args) {
         //Classe onde será iniciado o programa
 
-        //Felinos felinos = new Felinos();
-        //felinos.pantheraAncestral();
-        //felinos.imprimeRelacionados("PANTHERA ANCESTRAL");
-        //felinos.imprimeRelacionados("LEÃO");
-        //felinos.imprimeRelacionados("LEOPARDO DAS NEVES");
-        
-        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager //Define o estilo visual do programa
                 .getInstalledLookAndFeels()) {
             if ("Nimbus".equals(info.getName())) {
                 try {
@@ -29,6 +23,6 @@ public class Principal {
             }
         }
         
-        new Menu().setVisible(true);
+        new Menu().setVisible(true); //Permite a visualização do Menu
     }
 }
