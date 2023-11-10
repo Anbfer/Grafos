@@ -41,7 +41,6 @@ public class Grafo {
          */
         if (!grafo.containsKey(vertice)) {
             grafo.put(vertice, new ArrayList<>());/*Adiciona ao grafo uma chave com o valor definido pelo parâmetro passado e associa a essa cheve um ArrayList vazio para inserção dos dados relacionados posteriormente*/
-            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
         } else {
             JOptionPane.showMessageDialog(null, "Elemento já existe no grafo");
         }
@@ -53,9 +52,6 @@ public class Grafo {
         if (grafo.containsKey(dadoInicio) && grafo.containsKey(dadoFim) && !dadoInicio.equals(dadoFim))/*Se o grafo conter a chave correspondente ao dado de início e fim da relação e se o dado de início não for igual ao dado fim, ele executa o bloco que adiciona as relações*/ {
             grafo.get(dadoInicio).add(dadoFim); //Busca pela chave correspondente ao dado de início, e atribui a ela o valor do dado final
             grafo.get(dadoFim).add(dadoInicio);//Busca pela chave correspondente ao dado final, e atribui a ela o valor do dado de início
-            JOptionPane.showMessageDialog(null, "Relação cadastrada com sucesso!");
-        } else {
-            JOptionPane.showMessageDialog(null, "Elemento já existe no grafo");
         }
 
     }

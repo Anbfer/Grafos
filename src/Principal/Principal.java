@@ -8,9 +8,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class Principal {
 
     public static void main(String[] args) {
-        //Classe onde será iniciado o programa
-
-        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager //Define o estilo visual do programa
+        //Classe onde será iniciado o programa      
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager
                 .getInstalledLookAndFeels()) {
             if ("Nimbus".equals(info.getName())) {
                 try {
@@ -23,6 +22,6 @@ public class Principal {
             }
         }
         
-        new Menu().setVisible(true); //Permite a visualização do Menu
+        new Menu().setVisible(true);
     }
 }

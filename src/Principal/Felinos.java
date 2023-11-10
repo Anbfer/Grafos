@@ -13,10 +13,7 @@ public class Felinos {
         this.grafo = new Grafo();
     }
 
-    /* Automaziação dos exemplos início *Todas as funções até a área marcada tem o propósito de exemplo, 
-                                        *em uma aplicação real as informações seriam retiradas de um banco de dados ou arquivo permanente,
-                                        *diferentemente, as informações aqui são voláteis, ao se encerrar o programa, 
-                                        *qualquer nova alteração não é gravada permanentemente */
+    /* Automaziação dos exemplos início */
     public void pantheraAncestral() {
         ArrayList<String> panthera = new ArrayList<>();
 

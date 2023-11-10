@@ -20,7 +20,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
-        felidae.inicializarFelidaes(); //Inicializa os felidae para exemplo.
+        felidae.inicializarFelidaes(); 
     }
 
     /**
@@ -163,17 +163,14 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_felidaesBtnActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        //encerra o programa
         funcoesBtns.sair();
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void cadastrarFelinoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarFelinoBtnActionPerformed
-        //Permite adicionar novo felino ou familia de felino
         felidae.adicionarEspecieFelino();
     }//GEN-LAST:event_cadastrarFelinoBtnActionPerformed
 
     private void cadastrarRlcFelinoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarRlcFelinoBtnActionPerformed
-        //Permite adicionar novo relacionamento entre felinos
         felidae.adicionarRelacaoFelinos();
     }//GEN-LAST:event_cadastrarRlcFelinoBtnActionPerformed
 
