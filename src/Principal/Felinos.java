@@ -2,15 +2,14 @@ package Principal;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class Felinos {
 
-    private Grafo grafo;
+    private Grafo<String> grafo;
 
     public Felinos() {
-        this.grafo = new Grafo();
+        this.grafo = new Grafo<String>();
     }
 
     /* Automaziação dos exemplos início */
@@ -69,42 +68,49 @@ public class Felinos {
     /* Fim da automatização dos exemplos */
     public void adicionarEspecieFelino() {
         // Método que adiciona um felino ao grafo
-        String nomeDaEspecie = JOptionPane.showInputDialog("Qual a família ou felino especifico deseja cadastrar?").toUpperCase();
+        String nomeDaEspecie = JOptionPane.showInputDialog("Qual a família ou felino especifico deseja cadastrar?")
+                .toUpperCase();
         grafo.adcVertice(nomeDaEspecie);
     }
 
     public void adicionarRelacaoFelinos() {
         // Método que adiciona uma relação entre dois felinos
-        String felino1 = JOptionPane.showInputDialog("Informe a família ou felino especifico deseja relacionar?").toUpperCase();
-        String felino2 = JOptionPane.showInputDialog("Qual família ou felino deseja relacionar à " + felino1 + "?").toUpperCase();
+        String felino1 = JOptionPane.showInputDialog("Informe a família ou felino especifico deseja relacionar?")
+                .toUpperCase();
+        String felino2 = JOptionPane.showInputDialog("Qual família ou felino deseja relacionar à " + felino1 + "?")
+                .toUpperCase();
         grafo.adcAresta(felino1, felino2);
     }
 
     public void imprimeRelacionados(String felino) {
         // Método que imprime os felinos relacionados a um felino específico
-        List<String> listaDeRelacionados = grafo.buscaRelacionados(felino);//Cria uma lista com os valores retornados
+        List<String> listaDeRelacionados = grafo.buscaRelacionados(felino);// Cria uma lista com os valores retornados
         if (listaDeRelacionados == null) {
-            JOptionPane.showMessageDialog(null, "Não há valores como estes presentes no grafo"); //Caso a lista esteja vazia
+            JOptionPane.showMessageDialog(null, "Não há valores como estes presentes no grafo"); // Caso a lista esteja
+                                                                                                 // vazia
         } else {
-            StringBuilder stringBuilder = new StringBuilder();//Construtor de string para os multiplos valores serem vizualizados melhor
+            StringBuilder stringBuilder = new StringBuilder();// Construtor de string para os multiplos valores serem
+                                                              // vizualizados melhor
 
             for (String felidae : listaDeRelacionados) {
-                stringBuilder.append(felidae).append("\n");//Formatação para cada item presente na lista
+                stringBuilder.append(felidae).append("\n");// Formatação para cada item presente na lista
             }
 
-            String resultadoBusca = stringBuilder.toString();//Variavel que armazena o retorno do construtor de string
+            String resultadoBusca = stringBuilder.toString();// Variavel que armazena o retorno do construtor de string
 
-            JOptionPane.showMessageDialog(null, "Descendentes/Relacionados: \n" + resultadoBusca, "Grafo " + felino.toUpperCase(), JOptionPane.INFORMATION_MESSAGE);//Mensagem contendo os valores retornados
+            JOptionPane.showMessageDialog(null, "Descendentes/Relacionados: \n" + resultadoBusca,
+                    "Grafo " + felino.toUpperCase(), JOptionPane.INFORMATION_MESSAGE);// Mensagem contendo os valores
+                                                                                      // retornados
 
         }
 
     }
 
-    //Método para buscar uma familia ou felino especifico
+    // Método para buscar uma familia ou felino especifico
     public void buscarFelidaesEspecificos() {
-        Scanner input = new Scanner(System.in);//Metodo para capturar o que for digitado
         String familiaExemplos = JOptionPane.showInputDialog("Qual a família ou felino especifico deseja buscar?");
-        this.imprimeRelacionados(familiaExemplos);//retorna os valores relacionados pesquisados conforme a "instânciação"
+        this.imprimeRelacionados(familiaExemplos);// retorna os valores relacionados pesquisados conforme a
+                                                  // "instânciação"
     }
 
     public void exibeTodosFelidaes() {
